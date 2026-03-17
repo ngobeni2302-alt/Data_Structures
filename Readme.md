@@ -181,6 +181,33 @@ rotate_list([1, 2], 3)
 ```
 output 3:
 ```python
+### Question 8 - `rotate_list(nums, k)`
+
+User Story:
+As a developer building a digital carousel for a website, I need to rotate the items in my list to the right by a specific number of positions. This will allow the items at the end of the list to "wrap around" to the front.
+
+Handle empty lists by returning an empty list.
+input 1:
+```python
+rotate_list([1, 2, 3, 4, 5], 2)
+```
+output 2:
+```python
+[4, 5, 1, 2, 3]
+```
+
+input 2:
+```python
+rotate_list([10, 20, 30], 1)
+```
+output 2: 
+```python
+[30, 10, 20]
+```
+
+input 3: (k > length)
+```python
+rotate_list([1,
 [2, 1]
 ```
 

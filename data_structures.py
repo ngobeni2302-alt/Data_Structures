@@ -56,22 +56,56 @@ def sort_dict_by_value(data):
 
 
 def rotate_list(nums, k):
-    return ''
+    if not nums:  # If the list is empty, return an empty list
+        return []
+    
+    k = k % len(nums)  # Adjust k in case it is larger than the list length
+    return nums[-k:] + nums[:-k]  # Take last k elements and move them to the front
+
 
 def sort_emails_by_domain(emails):
-    return ''
+    # Sort emails based on the domain (part after '@')
+    return sorted(emails, key=lambda email: email.split('@')[1])
+
 
 def is_subset(list_a, list_b):
-    return ''
+    # Check if every item in list_a exists in list_b
+    return all(item in list_b for item in list_a)
 
-def remove_dictionary_key(data, keys_to_remove):
-    return ''
+
+def remove_dictionary_key(data, key_to_remove):
+    if key_to_remove not in data:  # Check if key exists in dictionary
+        return "Key not found"  # Return message if key is missing
+    
+    new_dict = data.copy()  # Create a copy so original dictionary is not modified
+    del new_dict[key_to_remove]  # Remove the specified key from the copy
+    return new_dict  # Return updated dictionary
+
 
 def invert_dictionary(data):
-    return ''
+    inverted = {}  # Create an empty dictionary to store inverted values
+    
+    for key, value in data.items():  # Loop through each key-value pair
+        inverted[value] = key  # Swap key and value (value becomes key)
+    
+    return inverted  # Return the inverted dictionary
+
 
 def recursive_sum(n):
-    return ''
+    if n == 1:  # Base case: if n is 1, return 1
+        return 1
+    return n + recursive_sum(n - 1)  # Add n to the sum of numbers before it
+
 
 def fibonacci_generator(n):
-    return ''
+    if n <= 0:  # If n is 0 or negative, return empty list
+        return []
+    if n == 1:  # If only one number is needed
+        return [0]
+    
+    fib = [0, 1]  # Start the Fibonacci sequence
+    
+    while len(fib) < n:  # Keep generating until we have n numbers
+        fib.append(fib[-1] + fib[-2])  # Add sum of last two numbers
+    
+    return fib  # Return the full Fibonacci list
